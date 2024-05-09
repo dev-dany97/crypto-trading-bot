@@ -1,1 +1,2 @@
-# binance_trader_bot
+# Binance trader bot
+To add some automated trades via binance api
