@@ -1,7 +1,6 @@
 import os
 from TraderSocket import Socket, btc_price
 from binance.client import Client
-import btalib
 import pandas as pd
 
 
@@ -29,7 +28,7 @@ class Trader:
         Get all open orders for the account
         :return: None if no open orders
         """
-        self.__client.get_open_orders()
+        return self.__client.get_open_orders() or None
 
     def get_coin_history(self, coin, candle_interval):
         """
@@ -61,8 +60,6 @@ class AIBot:
     def __init__(self):
         buying = self.should_be_buying()
         print(buying)
-
-    def trading_eth_coin(self):
 
     def should_be_buying(self):
         buyingIdx = 0  # buying index

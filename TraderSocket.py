@@ -13,7 +13,7 @@ def btc_trade_history(msg):
         btc_price['priceChange'] = msg['p']
         btc_price['priceChangePercent'] = msg['P']
         btc_price['bid'] = msg['b']
-        btc_price['last'] = msg['a']
+        btc_price['ask'] = msg['a']
         btc_price['error'] = False
     else:
         btc_price['error'] = True
