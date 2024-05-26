@@ -2,6 +2,7 @@ import os
 from TraderSocket import Socket, btc_price
 from binance.client import Client
 import pandas as pd
+from dotenv import load_dotenv
 
 
 class Trader:
@@ -93,8 +94,9 @@ if __name__ == '__main__':
     # socket.add_subscriber('BTCUSDT')
     # socket.add_subscriber('ETHEUR')
 
-    trader = Trader(api_key="YOUR_API_KEY",
-                    api_secret="YOUR_API_SECRET")
+    load_dotenv('config.env')
+    trader = Trader(api_key=os.environ["BINANCE_API_KEY"],
+                    api_secret=os.environ["BINANCE_API_SECRET"])
     coin_price = trader.get_coin_price("ETHEUR")
     print(coin_price)
     coins_from_wallet = trader.get_wallet_coin_balance("AVAX")
