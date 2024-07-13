@@ -9,7 +9,7 @@ PRICE_COLUMNS = ['open', 'high', 'low', 'close', 'volume']
 def klines_to_dataframe(bars):
     """ turn raw Binance klines into a DataFrame with float prices """
     df = pd.DataFrame(bars, columns=KLINE_COLUMNS)
-    df.set_index('dateTime', inplace=True)
+    df = df.set_index('dateTime')
     df[PRICE_COLUMNS] = df[PRICE_COLUMNS].astype(float)
     return df
 

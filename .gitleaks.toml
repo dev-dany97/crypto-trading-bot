@@ -1,0 +1,12 @@
+# Secret scan configuration (used by the "Secret scan" GitHub Action).
+# Uses the default gitleaks rules and only ignores the documented placeholders.
+title = "crypto-trading-bot"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Placeholders, not real secrets"
+regexes = [
+  '''YOUR_API_(KEY|SECRET)''',
+]
